@@ -138,4 +138,20 @@ document.querySelector('#btnSVDiemHon5').onclick = function(){
 
 
 // Sắp xếp điểm tăng dần
+document.querySelector('#btnSapXepTang').onclick = function(){
 
+    var arrTagTDDiem = document.querySelectorAll(('#tblBody :nth-child(4)'));
+    var arrDiem = [];
+    for (var index = 0; index < arrTagTDDiem.length; index++){
+
+        var diem = Number(arrTagTDDiem[index].innerHTML);
+
+        arrDiem.push(diem);
+    }
+    
+    //output : arrDiemSX đã sắp xếp
+    var arrDiemSX = [];
+    arrDiemSX = sapXepTangDanSo(arrDiem);
+    document.querySelector('#dtbTang').innerHTML = arrDiemSX;
+
+}
